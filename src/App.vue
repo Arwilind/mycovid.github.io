@@ -1,30 +1,35 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <Header />
+  <DataTitle />
+  <CountrySelect />
+  <DataBoxes />
+  <div>
+    <router-view />
+  </div>
 </template>
 
+<script>
+import Header from './components/Header.vue';
+import CountrySelect from './components/CountrySelect.vue';
+import DataBoxes from './components/DataBoxes.vue';
+
+export default {
+  components: {
+    Header,
+  },
+
+}
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+body {
+  background: url('https://images.unsplash.com/photo-1667513149021-ebbde2c416bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80') no-repeat center center fixed;
+  background-size: cover;
 }
 </style>
